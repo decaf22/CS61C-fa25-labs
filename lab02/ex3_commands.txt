@@ -3,3 +3,7 @@
 # Lines starting with # are comments, feel free to add any to document your commands
 
 # Please add your commands below this line
+
+# Step 5 gdb和lldb不同，需要写：
+(lldb) br s -n check_range -c "letter=='0'"
+#请读文档
