@@ -35,10 +35,17 @@ ex3:
 
     # return 1 if a1 == 0
     beq a1 x0 ex3_zero_case
+    mv t1 a0 #t1=a0
+loop:
+    li a3 1
+    beq a1 a3 ex3_end
 
     # otherwise, return ex3(a0, a1-1) * a0
     mv t0 a0      # save a0 in t0
+    
     addi a1 a1 -1 # decrement a1
+    mul a0 a0 t1
+    j loop
 
     jal ra ex3    # call ex3(a0, a1-1)
 
